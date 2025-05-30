@@ -27,7 +27,7 @@ plt.rcParams['ytick.labelsize'] = 10
 
 # ====================== DATA LOADING & PREPROCESSING ======================
 print("Loading and preprocessing data...")
-data = pd.read_csv(r"F:\ALL\毕设\直接预测\dataset_4.14\Complete datasets.csv") # complete dataset
+data = pd.read_csv(r'complete dataset') # complete dataset
 
 # Separate features and targets
 features = data.drop(['conver', 'selec'], axis=1)
@@ -359,7 +359,7 @@ def multi_objective_optimization(
 
 # main function
 if __name__ == "__main__":
-    # 假设以下变量已正确定义
+    # setting of the contraint
     engineering_constraints = {
         'Loading': (0, 30),
         'SSA': (100, 1000),
@@ -374,7 +374,7 @@ if __name__ == "__main__":
     }
 
     hof, best = multi_objective_optimization(
-        sample_path=r"F:\ALL\毕设\直接预测\dataset_4.14\specific catalyst.csv", # specific sample for optimization
+        sample_path=r'specific sample for optimization', # specific sample for optimization
         model_conver=xgb_conver,
         model_selec=xgb_selec,
         features_pipeline=features_pipeline,
